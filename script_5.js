@@ -19,12 +19,20 @@ console.log("Est-ce que tous les bouquins ont été empruntés une fois au moins
 
 // Le plus emprunté ?
 const bookMostBorrowed = books.reduce((mostBorrowed, book) => (book.rented > mostBorrowed.rented) ? book : mostBorrowed, books[0]); // Comparaison des Rented et renvoie le plus haut
-console.log("Le livre le plus emprunté est :", bookMostBorrowed);
+console.log("La plus grosse :", bookMostBorrowed);
 
 // Le moins emprunté ?
 const bookLessBorrowed = books.reduce((lessBorrowed, book) => (book.rented < lessBorrowed.rented) ? book : lessBorrowed, books[0]); // Comparaison des Rented et renvoie le plus haut
-console.log("Le livre le moins emprunté est :", bookLessBorrowed);
+console.log("La plus petite :", bookLessBorrowed);
 
 // Find l'ID 
 const livreAvecId873495 = books.find(book => book.id === 873495);
 console.log("Le book de fou malade c'est :", livreAvecId873495);
+
+// Supprimer l'ID machin machin
+const livresSansId133712 = books.filter(book => book.id !== 133712);
+console.log("On supprime le bouquin Id 133712 :", livresSansId133712);
+
+// Ordre alphab
+const livresOrderedWithout133712 = livresSansId133712.sort((a, b) => a.title.localeCompare(b.title));
+console.log("Les bouquins triés (sans Id 133712) :", livresOrderedWithout133712);
