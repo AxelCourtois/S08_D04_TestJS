@@ -8,16 +8,17 @@ function botTeubé(userAnswer) {
       return "Pwa, calme-toi...";
   }
 
-  if (userAnswer.toLowerCase().includes("fortnite")) {
+if (userAnswer.toLowerCase().includes("fortnite")) {
       return "on s' fait une partie soum-soum ?";
   }
 
   if (userAnswer.trim() === "") {
-       return "t'es en PLS ?";
+    return "t'es en PLS ?";
   }
 
-  return "balek.";
+    return "balek.";
 }
+
 
 let userAnswer = prompt("Dis un truc dis :");
 

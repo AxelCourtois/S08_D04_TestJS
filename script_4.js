@@ -40,13 +40,13 @@ console.log(entreName);
 
 
 
-const anneeActuelle = new Date().getFullYear();
-const agesActuels = entrepreneurs.map(entrepreneur =>
-  `${entrepreneur.first} ${entrepreneur.last} aurait ${anneeActuelle - entrepreneur.year} ans.`
+const yearNow = new Date().getFullYear();
+const agesToday = entrepreneurs.map(entrepreneur =>
+  `${entrepreneur.first} ${entrepreneur.last} a ${yearNow - entrepreneur.year} ans.`
 );
 
 console.log("Âge des bouffs (aujourd'hui) :");
-console.log(agesActuels);
+console.log(agesToday);
 
 
 

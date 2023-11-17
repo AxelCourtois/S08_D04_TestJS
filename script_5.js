@@ -14,14 +14,21 @@ const books = [
 ];
 
 
-let bookBorrow = books.every(book => book.rented > 0); 
+const bookBorrow = books.every(book => book.rented > 0); 
+const msg = bookBorrow ? "Oui" : "Non";
 
-console.log("Est-ce que tous les bouquins ont été empruntés une fois au moins ?" + " " + bookBorrow)
+console.log("Est-ce que tous les bouquins ont été empruntés une fois au moins ?" + " " + msg)
 
 
 
 
-const bookMostBorrowed = books.reduce((mostBorrowed, book) => (book.rented > mostBorrowed.rented) ? book : mostBorrowed, books[0]); // Comparaison des Rented et renvoie le plus haut
+const bookMostBorrowed = books.reduce((mostBorrowed, currentBook) => {
+  if (currentBook.rented > mostBorrowed.rented) {
+    return currentBook;
+  } else {
+    return mostBorrowed;
+  }
+}, books[0]); // Initialiser avec le premier livre
 
 console.log("La plus grosse :", bookMostBorrowed);
 
