@@ -1,19 +1,19 @@
-function botTeubé(answerUser) {
+function botTeubé(userAnswer) {
 
-  if (answerUser.endsWith("?")) {
+  if (userAnswer.endsWith("?")) {
       return "Ouais Ouais...";
   }
 
-  if (answerUser === answerUser.toUpperCase() && answerUser.trim() !== "") {
+  if (userAnswer === userAnswer.toUpperCase() && userAnswer.trim() !== "") {
       return "Pwa, calme-toi...";
   }
 
-  if (answerUser.toLowerCase().includes("fortnite")) {
+  if (userAnswer.toLowerCase().includes("fortnite")) {
       return "on s' fait une partie soum-soum ?";
   }
 
-  if (answerUser.trim() === "") {
-      return "t'es en PLS ?";
+  if (userAnswer.trim() === "") {
+       return "t'es en PLS ?";
   }
 
   return "balek.";

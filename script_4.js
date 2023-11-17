@@ -21,29 +21,37 @@ const entrepreneurs = [
 
 
 
-// Années 70
-const entrepreneurs70 = entrepreneurs.filter(entrepreneur => entrepreneur.year >= 1970 && entrepreneur.year < 1980);
+
+const entrepreneurs70 = entrepreneurs.filter(entrepreneur => {
+  return entrepreneur.year >= 1970 && entrepreneur.year < 1980;
+});
 console.log("Les voici (ces bouffons) : ")
 console.log(entrepreneurs70);
 
 
-// Noms et prénoms
-const nomsComplets = entrepreneurs.map(entrepreneur => `${entrepreneur.first} ${entrepreneur.last}`);
-console.log("Noms complets des bouffs :");
-console.log(nomsComplets);
 
 
-// Âge aujourd'hui
-const anneeActuelle = new Date().getFullYear();
-const agesActuels = entrepreneurs.map(entrepreneur => {
-  const age = anneeActuelle - entrepreneur.year;
-  return `${entrepreneur.first} ${entrepreneur.last} aurait ${age} ans aujourd'hui.`;
+const entreName = entrepreneurs.map(entrepreneur => {
+  return `${entrepreneur.first} ${entrepreneur.last}`
 });
+console.log("Noms complets des bouffs :");
+console.log(entreName);
+
+
+
+
+const anneeActuelle = new Date().getFullYear();
+const agesActuels = entrepreneurs.map(entrepreneur =>
+  `${entrepreneur.first} ${entrepreneur.last} aurait ${anneeActuelle - entrepreneur.year} ans.`
+);
+
 console.log("Âge des bouffs (aujourd'hui) :");
 console.log(agesActuels);
 
 
-// Ordre alphabétique nom de famille
+
+
+
 const entrepreneursSorted = entrepreneurs.sort((a, b) => a.last.localeCompare(b.last)); //Ici, a.last.localeCompare(b.last) compare les noms de famille (last) des entrepreneurs a et b en utilisant la méthode localeCompare.
 console.log("Trier les bouffs :");
 console.log(entrepreneursSorted);

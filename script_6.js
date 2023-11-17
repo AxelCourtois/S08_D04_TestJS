@@ -40,7 +40,7 @@ function codonName(codon) {
   }
 }
 
-function ARN(arn) {
+function calculARN(arn) {
   let acidesAmines = [];
 
   for (let i = 0; i < arn.length; i += 3) {
@@ -54,5 +54,5 @@ function ARN(arn) {
 const test = "CCGUCGUUGCGCUACAGC";
 const test2 = "CCUCGCCGGUACUUCUCG";
 
-console.log(ARN(test));
-console.log(ARN(test2));
+console.log(calculARN(test));
+console.log(calculARN(test2));
